@@ -9,7 +9,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.4.29"
+    "@types/node": "^22.10.0",
+    "effector": "^23.2.3",
+    "effector-vue": "^23.1.0",
+    "vue": "^3.4.29",
+    "vue-router": "^4.5.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.5",
