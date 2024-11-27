@@ -15,6 +15,6 @@ const props = defineProps<{
 .root {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 4px;
 }
 </style>

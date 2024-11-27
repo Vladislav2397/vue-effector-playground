@@ -5,12 +5,16 @@
     <transition name="fade" mode="out-in">
         <p v-if="isLoading">Loading...</p>
         <template v-else>
-            <div>
+            <div :class="styles.list">
                 <p>total: {{ response.total }}</p>
-                <ArticleRow
+                <router-link
                     v-for="article in list"
-                    :article="article"
-                />
+                    :key="article.id"
+                    :to="`/articles/${article.id}`">
+                    <ArticleRow
+                        :article="article"
+                    />
+                </router-link>
             </div>
         </template>
     </transition>
@@ -32,6 +36,12 @@ const [isLoading, response, list] = useUnit([model.$isPending, model.$response, 
 
 <style module="styles">
 .root {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.list {
     display: flex;
     flex-direction: column;
     gap: 24px;
